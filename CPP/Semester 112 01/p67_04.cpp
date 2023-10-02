@@ -15,4 +15,6 @@ int main() {
 	cin >> day; // 接收使用者輸入並傳入day變數作為日期
 
 	cout << endl << "本貨架商品的有效期限：西元" << year << "年" << month << "月" << day << "日"; // 輸出資訊
+
+	return 0;
 }

@@ -9,6 +9,8 @@ int main() {
 	cout << "折價券的金額：";
 	cin >> bonus; // 因為這兩個變數在上面的程式碼已經被定義成常數，無法被修改，所以執行錯誤
 	cout << "今日消費滿 " << price << " 元，送折價券 " << bonus << " 元" << endl;
+
+	return 0;
 }
 */
 
@@ -22,4 +24,6 @@ int main() {
 	cout << "折價券的金額：";
 	cin >> bonus;
 	cout << "今日消費滿 " << price << " 元，送折價券 " << bonus << " 元" << endl;
+
+	return 0;
 }
