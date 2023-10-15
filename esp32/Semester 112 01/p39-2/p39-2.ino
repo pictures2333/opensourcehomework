@@ -23,12 +23,12 @@ void loop() {
     digitalWrite(0, HIGH);
     digitalWrite(2, HIGH);
     digitalWrite(15, HIGH);
-    delay(50);
+    delay(100);
     digitalWrite(4, LOW);
     digitalWrite(0, LOW);
     digitalWrite(2, LOW);
     digitalWrite(15, LOW);
-    delay(50);
+    delay(100);
   }
   digitalWrite(4, LOW);
   digitalWrite(0, LOW);
@@ -47,11 +47,11 @@ void loop() {
     digitalWrite(0, HIGH);
     digitalWrite(2, HIGH);
     digitalWrite(15, HIGH);
-    delay(50);
+    delay(100);
     digitalWrite(4, LOW);
     digitalWrite(0, LOW);
     digitalWrite(2, LOW);
     digitalWrite(15, LOW);
-    delay(50);
+    delay(100);
   }
 }
