@@ -5,53 +5,32 @@ void setup() {
   pinMode(15, OUTPUT);
 }
 
+byte pins[] = {4, 0, 2, 15};
 void loop() {
-  digitalWrite(4, HIGH);
-  digitalWrite(0, LOW);
-  digitalWrite(2, LOW);
-  delay(500);
-  digitalWrite(4, LOW);
-  digitalWrite(0, HIGH);
-  digitalWrite(2, LOW);
-  delay(500);
-  digitalWrite(4, LOW);
-  digitalWrite(0, LOW);
-  digitalWrite(2, HIGH);
-  delay(500);
+  // light 1=>3 scan
+  for (int i=0;i<3;i++){
+    for (int j=0;i<3;i++){digitalWrite(pins[j], LOW);}
+    digitalWrite(pins[i], HIGH);
+    delay(500);
+  }
+  // flash
   for (int i=0; i<3; i++){
-    digitalWrite(4, HIGH);
-    digitalWrite(0, HIGH);
-    digitalWrite(2, HIGH);
-    digitalWrite(15, HIGH);
+    for (int j=0;i<4;i++){digitalWrite(pins[j], HIGH);}
     delay(100);
-    digitalWrite(4, LOW);
-    digitalWrite(0, LOW);
-    digitalWrite(2, LOW);
-    digitalWrite(15, LOW);
+    for (int j=0;i<4;i++){digitalWrite(pins[j], LOW);}
     delay(100);
   }
-  digitalWrite(4, LOW);
-  digitalWrite(0, LOW);
-  digitalWrite(2, HIGH);
-  delay(500);
-  digitalWrite(4, LOW);
-  digitalWrite(0, HIGH);
-  digitalWrite(2, LOW);
-  delay(500);
-  digitalWrite(4, HIGH);
-  digitalWrite(0, LOW);
-  digitalWrite(2, LOW);
-  delay(500);
+  // light 3=>1 scan
+  for (int i=2;i<=0;i--){
+    for (int j=0;i<3;i++){digitalWrite(pins[j], LOW);}
+    digitalWrite(pins[i], HIGH);
+    delay(500);
+  }
+  // flash
   for (int i=0; i<3; i++){
-    digitalWrite(4, HIGH);
-    digitalWrite(0, HIGH);
-    digitalWrite(2, HIGH);
-    digitalWrite(15, HIGH);
+    for (int j=0;i<4;i++){digitalWrite(pins[j], HIGH);}
     delay(100);
-    digitalWrite(4, LOW);
-    digitalWrite(0, LOW);
-    digitalWrite(2, LOW);
-    digitalWrite(15, LOW);
+    for (int j=0;i<4;i++){digitalWrite(pins[j], LOW);}
     delay(100);
   }
 }
