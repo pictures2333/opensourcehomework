@@ -1,0 +1,1 @@
+for n, i in enumerate(input()): print(f"Index of '{i}': {n}")
