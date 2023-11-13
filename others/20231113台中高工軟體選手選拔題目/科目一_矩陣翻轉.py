@@ -14,5 +14,5 @@ for i in range(row):
 
 for i in range(len(nums2)):
     for j in range(len(nums2[i])):
-        print(nums2[i][j], end = "")
+        print(nums2[i][j], end = " ")
     print()
