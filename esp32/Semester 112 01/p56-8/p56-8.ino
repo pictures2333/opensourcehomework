@@ -4,11 +4,8 @@ void setup() {
   Serial.begin(9600);
 }
 
-double inputVal; // 原始輸入數值
-int outputVal; // 計算後輸出數值
-// 輸入0~4095 ; 輸出0~255
-
-// 輸入Pin25(DAC1) ; 輸出Pin26(DAC2)
+double inputVal;
+int outputVal;
 
 void loop() {
   inputVal = analogRead(25);
@@ -18,10 +15,9 @@ void loop() {
   
   analogWrite(26, outputVal);
 
-  // 序列埠監控
-  Serial.print("輸出數值: ");
+  Serial.print("????: ");
   Serial.print(outputVal);
-  Serial.print(" | 接收到的數值: ");
+  Serial.print(" | ??????: ");
   Serial.println(inputVal);
 
   delay(10);
