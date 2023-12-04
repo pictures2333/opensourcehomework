@@ -1,8 +1,8 @@
+byte pins[4] = {4, 0, 2, 15};
 void setup() {
-  pinMode(4, OUTPUT);
-  pinMode(0, OUTPUT);
-  pinMode(2, OUTPUT);
-  pinMode(15, OUTPUT);
+  for (int i=0;i<4;i++){
+    pinMode(pins[i], OUTPUT);
+  }
 
   pinMode(39, INPUT);
 
@@ -37,8 +37,7 @@ void loop() {
         tn = tn / 2;
   }
 
-  digitalWrite(15, numlist[0]);
-  digitalWrite(2, numlist[1]);
-  digitalWrite(0, numlist[2]);
-  digitalWrite(4, numlist[3]);
+  for (int i=0;i<4;i++){
+    digitalWrite(pins[3-i], numlist[i]);
+  }
 }
