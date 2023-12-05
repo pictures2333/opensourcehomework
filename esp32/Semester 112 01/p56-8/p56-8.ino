@@ -15,9 +15,9 @@ void loop() {
   
   analogWrite(26, outputVal);
 
-  Serial.print("????: ");
+  Serial.print("輸出數值: ");
   Serial.print(outputVal);
-  Serial.print(" | ??????: ");
+  Serial.print(" | 輸入數值: ");
   Serial.println(inputVal);
 
   delay(10);
