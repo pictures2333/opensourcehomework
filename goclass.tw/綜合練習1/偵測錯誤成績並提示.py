@@ -1,0 +1,5 @@
+s1, s2, s3 = int(input()), int(input()), int(input())
+if s1 > 100: print(f"{s1} 注意該成績有誤")
+if s2 > 100: print(f"{s2} 注意該成績有誤")
+if s3 > 100: print(f"{s3} 注意該成績有誤")
+print(f"{s1} {s2} {s3}")
