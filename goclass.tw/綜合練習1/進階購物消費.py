@@ -1,0 +1,6 @@
+total = int(input())
+buy = 20*int(input())+15*int(input())+10*int(input())
+print(f"攜帶金額 {total}\n購物金額 {buy}")
+if (total-buy > 0): print(f"應找金額 {total-buy}")
+elif (total-buy < 0): print(f"不足金額 {(total-buy)*-1}")
+elif (total-buy == 0): print("剛好支付")
