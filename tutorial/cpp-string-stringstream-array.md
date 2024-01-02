@@ -2,6 +2,8 @@
 
 資料擺在一行，用空格分開。
 
+![ZJ_example](https://github.com/pictures2333/opensourcehomework/assets/85096042/c7ec8f4c-b348-4b7f-b708-a91cba0eba02)
+
 # String
 
 那其實C++除了可以用``char[]``來搞一個字串之外，
@@ -144,3 +146,5 @@ ss.clear();
 別人寫的: https://shengyu7697.github.io/std-vector/
 
 # 白上超可愛
+
+![fbksocute](https://github.com/pictures2333/opensourcehomework/assets/85096042/c2d94866-178c-42fd-9510-2da027c4db59)
