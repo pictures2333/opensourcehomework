@@ -1,10 +1,10 @@
 Zerojudge上有像是下圖這樣的題目：
 
-
+![image](https://github.com/pictures2333/opensourcehomework/assets/85096042/d35cb2b4-2849-4cbb-97c3-4d5ec11abc62)
 
 測資會一直給，直到EOF
 
-這時可以這樣解
+這時可以這樣處理資料
 
 ```cpp
 #include <iostream>
