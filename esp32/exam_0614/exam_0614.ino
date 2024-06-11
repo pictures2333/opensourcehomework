@@ -29,6 +29,8 @@ int key = 0;
 // 七段顯示器
 const byte _7SegPin[8] = {25, 26, 27, 14, 12, 13, 23, 15};
 const byte _7SegCode[10] = {0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 0x7d, 0x07, 0x7f, 0x6f};
+// 是不是共陽極七段顯示器
+#define ISSUNOFBEACH 1
 
 // main
 void setup() {
@@ -50,7 +52,11 @@ void setup() {
 }
 
 void blank(long sec) {
+#if (ISSUNOFBEACH == 1)
     for (int i = 0; i < 8; i++) digitalWrite(_7SegPin[i], 1);
+#else
+    for (int i = 0; i < 8; i++) digitalWrite(_7SegPin[i], 0);
+#endif
     delay(sec);
 }
 
@@ -67,7 +73,11 @@ void loop() {
             blank(500);
             // 七段作上數一次
             for (int cnt = 0; cnt < 10; cnt++) {
+#if (ISSUNOFBEACH == 1)
                 for (int seg = 0; seg < 8; seg++) digitalWrite(_7SegPin[seg], !((_7SegCode[cnt] >> seg)&0x01));
+#else
+                for (int seg = 0; seg < 8; seg++) digitalWrite(_7SegPin[seg], ((_7SegCode[cnt] >> seg)&0x01));
+#endif
                 delay(500);
             }
             // (暫滅)
@@ -102,5 +112,9 @@ void loop() {
         if ('0' <= nk && nk <= '9') key = nk - '0';
         // Serial.println(key);
     }
+#if (ISSUNOFBEACH == 1)
     for (int seg = 0; seg < 8; seg++) digitalWrite(_7SegPin[seg], !((_7SegCode[key] >> seg)&0x01));
+#else
+    for (int seg = 0; seg < 8; seg++) digitalWrite(_7SegPin[seg], ((_7SegCode[key] >> seg)&0x01));
+#endif
 }
