@@ -102,8 +102,10 @@ void loop() {
             // BZ交替響兩次
             for (int i = 0; i < 2; i++) {
 #if ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(3, 0, 0)
-                tone(BEEP, 200, 1000); // 且間隔一秒
-                tone(BEEP, 800, 1000); // 且間隔一秒
+                tone(BEEP, 200, 1000);
+                delay(1000); // 且間隔一秒
+                tone(BEEP, 800, 1000);
+                delay(1000); // 且間隔一秒
 #else
                 ledcWriteTone(channel, 400);
                 delay(1000); // 且間隔一秒
