@@ -44,8 +44,14 @@ void setup() {
     for (int i = 0; i < 8; i++) pinMode(_7SegPin[i], OUTPUT);
 
     // 蜂鳴器初始化
+#if ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(3, 0, 0)
+    pinMode(BEEP, OUTPUT);
+    analogWriteResolution(BEEP, 8);
+    analogWriteFrequency(BEEP, 10000);
+#else
     ledcSetup(channel, 10000, 8);
     ledcAttachPin(BEEP, channel);
+#endif
 
     // 一送電，外接LED亮
     digitalWrite(LEDPIN, 1);
@@ -95,13 +101,22 @@ void loop() {
             digitalWrite(LEDPIN, 0); // LED滅
             // BZ交替響兩次
             for (int i = 0; i < 2; i++) {
+#if ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(3, 0, 0)
+                tone(BEEP, 200, 1000); // 且間隔一秒
+                tone(BEEP, 800, 1000); // 且間隔一秒
+#else
                 ledcWriteTone(channel, 400);
                 delay(1000); // 且間隔一秒
                 ledcWriteTone(channel, 800);
                 delay(1000); // 且間隔一秒
+#endif
             }
             // 關掉蜂鳴器
+#if ESP_ARDUINO_VERSION >= ESP_ARDUINO_VERSION_VAL(3, 0, 0)
+            noTone(BEEP);
+#else
             ledcWriteTone(channel, 0);
+#endif
             digitalWrite(LEDPIN, 1); // LED亮
         }
     }
